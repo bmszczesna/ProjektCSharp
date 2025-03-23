@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T5ehweggV/A=",
+  "dgSpecHash": "3c9pLru0UJA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\magas\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\magas\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

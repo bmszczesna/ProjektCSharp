@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj": {}
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\magas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
+        "outputPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj": {
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+        "projectUniqueName": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
         "projectName": "Logic",
-        "projectPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+        "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
         "packagesPath": "C:\\Users\\magas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\obj\\",
+        "outputPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj"
+              "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj": {
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
+        "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
         "packagesPath": "C:\\Users\\magas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\obj\\",
+        "outputPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -166,8 +166,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj": {
-                "projectPath": "C:\\Users\\magas\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj"
+              "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj": {
+                "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj"
               }
             }
           }
