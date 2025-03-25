@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\magas\\.nuget\\packages\\": {},
+    "C:\\Users\\beata\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+      "projectUniqueName": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
       "projectName": "Logic",
-      "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
-      "packagesPath": "C:\\Users\\magas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Logic\\obj\\",
+      "projectPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+      "packagesPath": "C:\\Users\\beata\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Logic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\magas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\beata\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -52,14 +52,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj"
+            "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj"
             }
           }
         }
@@ -95,7 +96,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

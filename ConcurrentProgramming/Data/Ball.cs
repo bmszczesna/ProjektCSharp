@@ -9,13 +9,12 @@
 //_____________________________________________________________________________________________________________________________________
 
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace TP.ConcurrentProgramming.Data
 {
     internal class Ball : IBall
     {

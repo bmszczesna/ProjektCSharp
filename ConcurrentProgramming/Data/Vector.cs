@@ -1,4 +1,5 @@
-﻿//____________________________________________________________________________________________________________________________________
+﻿
+//____________________________________________________________________________________________________________________________________
 //
 //  Copyright (C) 2024, Mariusz Postol LODZ POLAND.
 //
@@ -9,14 +10,7 @@
 //  by introducing yourself and telling us what you do with this community.
 //_____________________________________________________________________________________________________________________________________
 
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data
+namespace TP.ConcurrentProgramming.Data
 {
     /// <summary>
     ///  Two dimensions immutable vector
@@ -45,3 +39,4 @@ namespace Data
             y = YComponent;
         }
     }
+}

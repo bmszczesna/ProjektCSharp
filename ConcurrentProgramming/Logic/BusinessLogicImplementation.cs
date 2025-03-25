@@ -1,4 +1,5 @@
-﻿//____________________________________________________________________________________________________________________________________
+﻿
+//____________________________________________________________________________________________________________________________________
 //
 //  Copyright (C) 2024, Mariusz Postol LODZ POLAND.
 //
@@ -8,15 +9,10 @@
 //
 //_____________________________________________________________________________________________________________________________________
 
-
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnderneathLayerAPI = TP.ConcurrentProgramming.Data.DataAbstractAPI;
 
-namespace Logic
+namespace TP.ConcurrentProgramming.Logic
 {
     internal class BusinessLogicImplementation : BusinessLogicAbstractAPI
     {

@@ -1,0 +1,16 @@
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.AssemblyInfoInputs.cache
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.AssemblyInfo.cs
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.csproj.CoreCompileInputs.cache
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.sourcelink.json
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.csproj.AssemblyReference.cache
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\bin\Debug\net8.0\Logic.deps.json
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\bin\Debug\net8.0\Logic.dll
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\bin\Debug\net8.0\Logic.pdb
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\bin\Debug\net8.0\Data.dll
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\bin\Debug\net8.0\Data.pdb
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.csproj.Up2Date
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.dll
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\refint\Logic.dll
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\Logic.pdb
+C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\Logic\obj\Debug\net8.0\ref\Logic.dll
