@@ -9,7 +9,6 @@
 //_____________________________________________________________________________________________________________________________________
 
 using System.Numerics;
-using TP.ConcurrentProgramming.BusinessLogic;
 
 namespace TP.ConcurrentProgramming.Data.Test
 {

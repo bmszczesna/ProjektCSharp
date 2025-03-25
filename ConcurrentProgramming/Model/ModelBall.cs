@@ -12,7 +12,8 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using LogicIBall = TP.ConcurrentProgramming.BusinessLogic.IBall;
+using TP.ConcurrentProgramming.Logic;
+
 
 namespace TP.ConcurrentProgramming.Model
 {

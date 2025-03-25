@@ -12,7 +12,9 @@ using System;
 using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Linq;
-using UnderneathLayerAPI = TP.ConcurrentProgramming.BusinessLogic.BusinessLogicAbstractAPI;
+using UnderneathLayerAPI = TP.ConcurrentProgramming.Logic.BusinessLogicAbstractAPI;
+using TP.ConcurrentProgramming.Logic;
+
 
 namespace TP.ConcurrentProgramming.Presentation.Model
 {
