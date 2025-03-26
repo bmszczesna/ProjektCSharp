@@ -8,9 +8,7 @@
 //
 //_____________________________________________________________________________________________________________________________________
 
-using TP.ConcurrentProgramming.Data;
-
-namespace TP.ConcurrentProgramming.BusinessLogic.Test
+namespace ConcurrentProgramming.Logic.Test
 {
     [TestClass]
     public class BallUnitTest

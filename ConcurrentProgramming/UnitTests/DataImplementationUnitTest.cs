@@ -1,5 +1,4 @@
-﻿
-namespace ConcurrentProgramming.Data.Test
+﻿namespace ConcurrentProgramming.Data.Test
 {
     [TestClass]
     public class DataImplementationUnitTest

@@ -1,6 +1,0 @@
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.AssemblyInfoInputs.cache
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.AssemblyInfo.cs
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.csproj.CoreCompileInputs.cache
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.sourcelink.json
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\ViewModel\obj\Debug\net8.0\ViewModel.csproj.AssemblyReference.cache

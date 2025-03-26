@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {}
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
+    "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\beata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
+        "projectPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\magas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\beata\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\magas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

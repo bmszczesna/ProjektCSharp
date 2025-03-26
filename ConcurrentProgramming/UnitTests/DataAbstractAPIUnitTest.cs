@@ -1,7 +1,4 @@
-﻿
-using ConcurrentProgramming.Data;
-
-namespace ConcurrentProgramming.Data.Test
+﻿namespace ConcurrentProgramming.Data.Test
 {
     [TestClass]
     public class DataAbstractAPIUnitTest

@@ -1,0 +1,6 @@
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.csproj.AssemblyReference.cache
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfoInputs.cache
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfo.cs
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\magas\Source\Repos\ProjektCSharp\ConcurrentProgramming\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json

@@ -1,5 +1,0 @@
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\View\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\View\obj\Debug\net8.0-windows\App.g.cs
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\View\obj\Debug\net8.0-windows\View_MarkupCompile.cache
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\View\obj\Debug\net8.0-windows\View_MarkupCompile.lref
-C:\Users\beata\projektc#\ProjektCSharp\ConcurrentProgramming\View\obj\Debug\net8.0-windows\View.csproj.AssemblyReference.cache
