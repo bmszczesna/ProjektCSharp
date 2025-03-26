@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "S+OZJvY7nKk=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Model\\Model.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\beata\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
-  ],
-  "logs": []
+  "dgSpecHash": "9oR8tLtL0jU=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Model\\Model.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Nie można odnaleźć informacji o projekcie dla elementu „C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj”. Jeśli używasz programu Visual Studio, może to być spowodowane tym, że projekt został rozładowany lub nie jest częścią bieżącego rozwiązania, więc uruchom polecenie przywracania z poziomu wiersza polecenia. W innych przypadkach może to oznaczać, że plik projektu jest nieprawidłowy lub nie zawiera elementów docelowych wymaganych do przywrócenia.",
+      "libraryId": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {}
+    "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
+    "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
-        "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
+        "projectName": "Data",
+        "projectPath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\beata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
+        "outputPath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,12 +50,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

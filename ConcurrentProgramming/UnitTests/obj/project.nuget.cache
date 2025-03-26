@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Yy1DghpDL4=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
+  "dgSpecHash": "wCr5TSxEeJw=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beata\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
@@ -13,7 +13,7 @@
     "C:\\Users\\beata\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\beata\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\beata\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -94,5 +94,24 @@
     "C:\\Users\\beata\\.nuget\\packages\\xunit.extensibility.execution\\2.5.3\\xunit.extensibility.execution.2.5.3.nupkg.sha512",
     "C:\\Users\\beata\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.3\\xunit.runner.visualstudio.2.5.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Nie można znaleźć projektu „C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\ViewModel\\ViewModel.csproj”. Sprawdź, czy odwołanie projektu jest prawidłowe i czy plik projektu istnieje.",
+      "libraryId": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\ViewModel\\ViewModel.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Nie można odnaleźć informacji o projekcie dla elementu „C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj”. Jeśli używasz programu Visual Studio, może to być spowodowane tym, że projekt został rozładowany lub nie jest częścią bieżącego rozwiązania, więc uruchom polecenie przywracania z poziomu wiersza polecenia. W innych przypadkach może to oznaczać, że plik projektu jest nieprawidłowy lub nie zawiera elementów docelowych wymaganych do przywrócenia.",
+      "libraryId": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Logic\\Logic.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
