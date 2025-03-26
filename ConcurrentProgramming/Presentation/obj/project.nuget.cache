@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aIbyRM5Kf18=",
+  "dgSpecHash": "q/nsa+u3Vwk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\beata\\source\\repos\\bmszczesna\\ProjektCSharp\\ConcurrentProgramming\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\magas\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
+    "C:\\Users\\beata\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }
