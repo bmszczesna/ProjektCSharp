@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LAU6z+jhAl4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\magas\\Source\\Repos\\ProjektCSharp\\ConcurrentProgramming\\View\\View.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\magas\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

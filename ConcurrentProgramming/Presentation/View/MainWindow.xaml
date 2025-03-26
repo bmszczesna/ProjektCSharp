@@ -10,7 +10,7 @@
         <vm:MainWindowViewModel />
     </Window.DataContext>
     <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400">
-        <ItemsControl ItemsSource="{Binding Balls}">
+        <ItemsControl ItemsSource="{Binding Balls}" RenderTransformOrigin="0.476,0.455" Margin="-6,-6,6,6">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas />
