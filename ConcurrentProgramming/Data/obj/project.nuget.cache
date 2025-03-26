@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Eb9/JA8/yjk=",
+  "dgSpecHash": "mPMb7QreQ5s=",
   "success": true,
   "projectFilePath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\beata\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

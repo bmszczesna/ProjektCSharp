@@ -8,8 +8,9 @@
 //
 //_____________________________________________________________________________________________________________________________________
 
-namespace TP.ConcurrentProgramming.Logic
+using TP.ConcurrentProgramming.Logic;
 
+namespace TP.ConcurrentProgramming.Logic
 {
     internal class Ball : IBall
     {

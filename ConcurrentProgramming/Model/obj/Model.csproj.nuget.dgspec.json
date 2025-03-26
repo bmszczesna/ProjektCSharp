@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
-        "projectName": "Data",
+        "projectName": "DataLayer",
         "projectPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\beata\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\beata\\projektc#\\ProjektCSharp\\ConcurrentProgramming\\Data\\obj\\",
@@ -50,6 +50,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

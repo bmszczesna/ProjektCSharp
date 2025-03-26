@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Data")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DataLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69a541a3494bf5ad085609cd567f2c12ef7487b3")]
-[assembly: System.Reflection.AssemblyProductAttribute("Data")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Data")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8d3fe2225c9ce981347a34a454f26c2c48f38dd")]
+[assembly: System.Reflection.AssemblyProductAttribute("DataLayer")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DataLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
