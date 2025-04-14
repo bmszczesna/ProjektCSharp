@@ -23,15 +23,19 @@ namespace ConcurrentProgramming.Data
                 throw new ObjectDisposedException(nameof(DataImplementation));
             if (upperLayerHandler == null)
                 throw new ArgumentNullException(nameof(upperLayerHandler));
+
             Random random = new Random();
+            double defaultDiameter = 20; 
+
             for (int i = 0; i < numberOfBalls; i++)
             {
                 Vector startingPosition = new(random.Next(100, 400 - 100), random.Next(100, 400 - 100));
-                Ball newBall = new(startingPosition, startingPosition);
+                Ball newBall = new(startingPosition, startingPosition, defaultDiameter); 
                 upperLayerHandler(startingPosition, newBall);
                 BallsList.Add(newBall);
             }
         }
+
 
         #endregion DataAbstractAPI
 

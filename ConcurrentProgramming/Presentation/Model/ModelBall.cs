@@ -59,7 +59,8 @@ namespace Model
 
         private void NewPositionNotification(object sender, IPosition e)
         {
-            Top = e.y; Left = e.x;
+            Top = e.y - Diameter / 2;
+            Left = e.x - Diameter / 2;
         }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = "")

@@ -28,5 +28,6 @@ namespace ConcurrentProgramming.Data
             x = XComponent;
             y = YComponent;
         }
+
     }
 }
