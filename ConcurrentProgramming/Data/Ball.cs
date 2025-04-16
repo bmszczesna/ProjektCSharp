@@ -49,7 +49,7 @@
                 newX = radius + frameWidth;
             }
             // Right edge
-            else if (newX + radius >= canvasWidth - frameWidth)
+            else if (newX + radius >= canvasWidth)
             {
                 delta = new Vector(-delta.x, delta.y);
                 newX = canvasWidth - radius - frameWidth;
@@ -62,7 +62,7 @@
                 newY = radius + frameWidth; 
             }
             // Down edge
-            else if (newY + radius >= canvasHeight - frameWidth) 
+            else if (newY + radius >= canvasHeight) 
             {
                 delta = new Vector(delta.x, -delta.y);
                 newY = canvasHeight - radius - frameWidth;
