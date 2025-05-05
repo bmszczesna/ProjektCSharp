@@ -5,29 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ViewModel"
         mc:Ignorable="d"
-        Title="Presentation layer targeting reactive behaviour" Height="auto" Width="auto"
-        MinHeight="500" MinWidth="800">
+        Title="Symulacja kul" Height="600" Width="800"
+        MinHeight="650" MinWidth="900">
+
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
-    <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400">
-        <ItemsControl ItemsSource="{Binding Balls}" RenderTransformOrigin="0.476,0.455" Margin="-6,-6,6,6">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Canvas />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Ellipse Width= "{Binding Diameter}" Height="{Binding Diameter}" Fill="Blue" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemContainerStyle>
-                <Style TargetType="ContentPresenter">
-                    <Setter Property="Canvas.Top" Value="{Binding Top}" />
-                    <Setter Property="Canvas.Left" Value="{Binding Left}" />
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-        </ItemsControl>
-    </Border>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+            <TextBlock Text="Liczba kul:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="BallCountTextBox" Width="50" VerticalAlignment="Center"/>
+            <Button Content="Start" Click="StartButton_Click" Width="80"/>
+            <Button Content="Stop" Click="StopButton_Click" Width="80"/>
+            <Button Content="Reset" Click="ResetButton_Click" Width="80"/>
+        </StackPanel>
+
+        <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400" Margin="190,55,190,89" Grid.RowSpan="2">
+            <ItemsControl ItemsSource="{Binding Balls}" RenderTransformOrigin="0.476,0.455" Margin="-6,-6,6,6">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Ellipse Width="{Binding Diameter}" Height="{Binding Diameter}" Fill="Blue"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Top" Value="{Binding Top}" />
+                        <Setter Property="Canvas.Left" Value="{Binding Left}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </Border>
+    </Grid>
 </Window>

@@ -18,6 +18,8 @@
         public event EventHandler<IVector>? NewPositionNotification;
 
         public IVector Velocity { get; set; }
+        public double Left => Position.x - Diameter / 2;
+        public double Top => Position.y - Diameter / 2;
 
         public double Diameter { get; }
 

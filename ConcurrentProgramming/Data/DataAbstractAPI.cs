@@ -48,5 +48,11 @@
         event EventHandler<IVector> NewPositionNotification;
 
         IVector Velocity { get; set; }
+
+        double Diameter { get; }
+
+        double Left { get; }
+        double Top { get; }
     }
+
 }

@@ -3,30 +3,47 @@ using ViewModel;
 
 namespace Presentation.View
 {
-    /// <summary>
-    /// View implementation
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel ViewModel => DataContext as MainWindowViewModel;
+
         public MainWindow()
         {
-            Random random = new Random();
             InitializeComponent();
-            MainWindowViewModel viewModel = (MainWindowViewModel)DataContext;
-            double screenWidth = SystemParameters.PrimaryScreenWidth;
-            double screenHeight = SystemParameters.PrimaryScreenHeight;
-            viewModel.Start(random.Next(5, 10));
         }
 
-        /// <summary>
-        /// Raises the <seealso cref="System.Windows.Window.Closed"/> event.
-        /// </summary>
-        /// <param name="e">An <see cref="EventArgs"/> that contains the event data.</param>
-        protected override void OnClosed(EventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is MainWindowViewModel viewModel)
-                viewModel.Dispose();
-            base.OnClosed(e);
+            if (int.TryParse(BallCountTextBox.Text, out int numberOfBalls))
+            {
+                if (numberOfBalls <= 0)
+                {
+                    MessageBox.Show("Liczba kulek musi być większa niż 0.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (numberOfBalls > 100)
+                {
+                    MessageBox.Show("Maksymalna liczba kulek to 100.", "Ograniczenie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                ViewModel.Start(numberOfBalls);
+            }
+            else
+            {
+                MessageBox.Show("Wprowadź poprawną liczbę całkowitą.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel?.Stop();
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel?.Reset();
         }
     }
 }

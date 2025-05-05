@@ -26,37 +26,21 @@ namespace ViewModel
         {
             if (Disposed)
                 throw new ObjectDisposedException(nameof(MainWindowViewModel));
-
-            // Pobieranie liczby kul od użytkownika
-            string input = Microsoft.VisualBasic.Interaction.InputBox("Ile kul chcesz stworzyć?", "Wprowadź liczbę kul", "10");
-
-           
-            if (int.TryParse(input, out int numberOfBallsInput))
-            {
-               
-                if (numberOfBallsInput < 1 || numberOfBallsInput > 15)
-                {
-  
-                    System.Windows.MessageBox.Show("Liczba kul musi wynosić od 1 do 15.", "Błąd", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
-                }
-                else
-                {
-                 
-                    ModelLayer.Start(numberOfBallsInput);
-                }
-            }
-            else
-            {
-               
-                System.Windows.MessageBox.Show("Wprowadź poprawną liczbę.", "Błąd", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
-            }
-
+            ModelLayer.Start(numberOfBalls);
             Observer.Dispose();
         }
 
-
-
         public ObservableCollection<ModelIBall> Balls { get; } = new ObservableCollection<ModelIBall>();
+        public void Stop()
+        {
+            Observer?.Dispose();
+        }
+
+        public void Reset()
+        {
+            Stop();
+            Balls.Clear();
+        }
 
         #endregion public API
 
