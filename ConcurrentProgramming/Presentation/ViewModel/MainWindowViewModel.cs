@@ -31,16 +31,6 @@ namespace ViewModel
         }
 
         public ObservableCollection<ModelIBall> Balls { get; } = new ObservableCollection<ModelIBall>();
-        public void Stop()
-        {
-            Observer?.Dispose();
-        }
-
-        public void Reset()
-        {
-            Stop();
-            Balls.Clear();
-        }
 
         #endregion public API
 

@@ -22,8 +22,6 @@
             <TextBlock Text="Liczba kul:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <TextBox x:Name="BallCountTextBox" Width="50" VerticalAlignment="Center"/>
             <Button Content="Start" Click="StartButton_Click" Width="80"/>
-            <Button Content="Stop" Click="StopButton_Click" Width="80"/>
-            <Button Content="Reset" Click="ResetButton_Click" Width="80"/>
         </StackPanel>
 
         <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400" Margin="190,55,190,89" Grid.RowSpan="2">

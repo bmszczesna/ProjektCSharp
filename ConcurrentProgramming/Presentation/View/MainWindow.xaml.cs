@@ -35,15 +35,5 @@ namespace Presentation.View
                 MessageBox.Show("Wprowadź poprawną liczbę całkowitą.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        private void StopButton_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel?.Stop();
-        }
-
-        private void ResetButton_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel?.Reset();
-        }
     }
 }
