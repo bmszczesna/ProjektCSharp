@@ -20,8 +20,8 @@
 
         <StackPanel Orientation="Horizontal" Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
             <TextBlock Text="Liczba kul:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-            <TextBox x:Name="BallCountTextBox" Width="50" VerticalAlignment="Center"/>
-            <Button Content="Start" Click="StartButton_Click" Width="80"/>
+            <TextBox Width="50" VerticalAlignment="Center" Text="{Binding BallCount, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="Start" Command="{Binding StartCommand}" Width="80"/>
         </StackPanel>
 
         <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400" Margin="190,55,190,89" Grid.RowSpan="2">
