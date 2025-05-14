@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Timers;
 using ConcurrentProgramming.Data;
 
 namespace ConcurrentProgramming.Data
@@ -10,7 +9,9 @@ namespace ConcurrentProgramming.Data
 
         public DataImplementation()
         {
-            MoveTimer = new Timer(Move, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(100));
+            MoveTimer = new System.Timers.Timer(8);
+            MoveTimer.Elapsed += OnMoveTimerElapsed;
+            MoveTimer.Start();
         }
 
         #endregion ctor
@@ -27,15 +28,18 @@ namespace ConcurrentProgramming.Data
             Random random = new Random();
             double defaultDiameter = 20;
 
-            for (int i = 0; i < numberOfBalls; i++)
+            lock (ballsLock)
             {
-                Vector startingPosition = new(random.Next(100, 400 - 100), random.Next(100, 400 - 100));
-                Ball newBall = new(startingPosition, startingPosition);
-                upperLayerHandler(startingPosition, newBall);
-                BallsList.Add(newBall);
+                for (int i = 0; i < numberOfBalls; i++)
+                {
+                    Vector startingPosition = new Vector(random.Next(100, 400 - 100), random.Next(100, 400 - 100));
+                    Vector startingVelocity = new Vector((random.NextDouble() * 20 - 10), (random.NextDouble() * 20 - 10));
+                    Ball newBall = new Ball(startingPosition, startingVelocity, 1, defaultDiameter);
+                    upperLayerHandler(startingPosition, newBall);
+                    BallsList.Add(newBall);
+                }
             }
         }
-
 
         #endregion DataAbstractAPI
 
@@ -43,14 +47,13 @@ namespace ConcurrentProgramming.Data
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!Disposed)
+            if (disposing)
             {
-                if (disposing)
+                MoveTimer.Dispose();
+                lock (ballsLock)
                 {
-                    MoveTimer.Dispose();
                     BallsList.Clear();
                 }
-                Disposed = true;
             }
             else
                 throw new ObjectDisposedException(nameof(DataImplementation));
@@ -58,7 +61,6 @@ namespace ConcurrentProgramming.Data
 
         public override void Dispose()
         {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
@@ -67,41 +69,31 @@ namespace ConcurrentProgramming.Data
 
         #region private
 
-        //private bool disposedValue;
         private bool Disposed = false;
-
-        private readonly Timer MoveTimer;
-        private Random RandomGenerator = new();
-        private List<Ball> BallsList = [];
-
-        private void Move(object? x)
+        private readonly System.Timers.Timer MoveTimer;
+        private List<Ball> BallsList = new List<Ball>();
+        private void OnMoveTimerElapsed(object? sender, ElapsedEventArgs e)
         {
-            foreach (Ball item in BallsList)
-                item.Move(new Vector((RandomGenerator.NextDouble() - 0.5) * 10, (RandomGenerator.NextDouble() - 0.5) * 10));
+            double deltaTime = e.SignalTime.Subtract(LastMoveTime).TotalSeconds;
+            LastMoveTime = e.SignalTime;
+
+            List<Ball> ballsCopy;
+            lock (ballsLock)
+            {
+                ballsCopy = new List<Ball>(BallsList); // bezpieczna kopia
+            }
+
+            foreach (Ball ball in ballsCopy)
+            {
+                ball.Move(deltaTime);
+            }
         }
+
+
+
+        private DateTime LastMoveTime = DateTime.Now;
+        private readonly object ballsLock = new object();
 
         #endregion private
-
-        #region TestingInfrastructure
-
-        [Conditional("DEBUG")]
-        internal void CheckBallsList(Action<IEnumerable<IBall>> returnBallsList)
-        {
-            returnBallsList(BallsList);
-        }
-
-        [Conditional("DEBUG")]
-        internal void CheckNumberOfBalls(Action<int> returnNumberOfBalls)
-        {
-            returnNumberOfBalls(BallsList.Count);
-        }
-
-        [Conditional("DEBUG")]
-        internal void CheckObjectDisposed(Action<bool> returnInstanceDisposed)
-        {
-            returnInstanceDisposed(Disposed);
-        }
-
-        #endregion TestingInfrastructure
     }
 }

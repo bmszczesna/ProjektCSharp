@@ -34,12 +34,39 @@ namespace ConcurrentProgramming.Logic
             if (upperLayerHandler == null)
                 throw new ArgumentNullException(nameof(upperLayerHandler));
 
-            layerBellow.Start(numberOfBalls, (startingPosition, databall) =>
+            layerBellow.Start(numberOfBalls, (startingPosition, dataBall) =>
             {
-                var ball = new Ball(databall, GetDimensions);
-                upperLayerHandler(new Position(startingPosition.x, startingPosition.x), ball);
+                var logicBall = new Ball(dataBall, GetDimensions);
+                logicBalls.Add(logicBall);
+
+                dataBall.NewPositionNotification += (_, _) => HandleCollisions(logicBall);
+
+                upperLayerHandler(new Position(startingPosition.x, startingPosition.y), logicBall);
             });
         }
+
+
+        private void HandleCollisions(Ball movingBall)
+        {
+            var ballsCopy = new List<Ball>(logicBalls);
+
+            foreach (var other in ballsCopy)
+            {
+                if (other == movingBall) continue;
+
+                var aPos = new Position(movingBall.DataBall.Position.x, movingBall.DataBall.Position.y);
+                var bPos = new Position(other.DataBall.Position.x, other.DataBall.Position.y);
+                var diameter = GetDimensions.BallDimension * 2;
+
+                if (movingBall.AreBallsColliding(aPos, bPos, diameter))
+                {
+                    movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
+                }
+            }
+        }
+
+
+
 
         #endregion BusinessLogicAbstractAPI
 
@@ -48,6 +75,8 @@ namespace ConcurrentProgramming.Logic
         private bool Disposed = false;
 
         private readonly UnderneathLayerAPI layerBellow;
+
+        private List<ConcurrentProgramming.Logic.Ball> logicBalls = new();
 
         #endregion private
 
