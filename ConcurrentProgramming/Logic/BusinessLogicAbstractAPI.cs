@@ -13,7 +13,7 @@
 
         #region Layer API
 
-        public static readonly Dimensions GetDimensions = new(10.0, 10.0, 10.0);
+        public static readonly Dimensions GetDimensions = new(10.0, 420.0, 400.0);
 
         public abstract void Start(int numberOfBalls, Action<IPosition, IBall> upperLayerHandler);
 
@@ -44,8 +44,8 @@
 
     public interface IPosition
     {
-        double x { get; init; }
-        double y { get; init; }
+        double x { get; set; }
+        double y { get; set; }
     }
 
     public interface IBall

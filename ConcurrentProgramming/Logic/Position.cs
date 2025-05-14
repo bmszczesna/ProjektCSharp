@@ -4,8 +4,8 @@
     {
         #region IPosition
 
-        public double x { get; init; }
-        public double y { get; init; }
+        public double x { get; set; }
+        public double y { get; set; }
 
         #endregion IPosition
 
@@ -19,3 +19,4 @@
         }
     }
 }
+

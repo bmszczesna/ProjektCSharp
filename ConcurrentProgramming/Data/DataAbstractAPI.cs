@@ -35,12 +35,12 @@
         /// <summary>
         /// The X component of the vector.
         /// </summary>
-        double x { get; init; }
+        double x { get; set; }
 
         /// <summary>
         /// The y component of the vector.
         /// </summary>
-        double y { get; init; }
+        double y { get; set; }
     }
 
     public interface IBall
@@ -49,10 +49,6 @@
 
         IVector Velocity { get; set; }
 
-        double Diameter { get; }
-
-        double Left { get; }
-        double Top { get; }
     }
 
 }
