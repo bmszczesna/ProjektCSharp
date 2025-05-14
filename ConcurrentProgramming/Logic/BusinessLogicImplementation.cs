@@ -82,8 +82,8 @@ namespace ConcurrentProgramming.Logic
 
         #region TestingInfrastructure
 
-        [Conditional("DEBUG")]
         internal void CheckObjectDisposed(Action<bool> returnInstanceDisposed)
+
         {
             returnInstanceDisposed(Disposed);
         }

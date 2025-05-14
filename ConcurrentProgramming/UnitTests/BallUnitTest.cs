@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConcurrentProgramming.Data;
 
 namespace ConcurrentProgramming.Data.Test
@@ -12,40 +7,38 @@ namespace ConcurrentProgramming.Data.Test
     public class BallUnitTest
     {
         [TestMethod]
-        public void ConstructorTestMethod()
+        public void Constructor_CreatesBallCorrectly()
         {
-            Vector testinVector = new Vector(0.0, 0.0);
-            double diameter = 5.0;  // Dodajemy wartość średnicy
-            Ball newInstance = new(testinVector, testinVector, diameter);  // Przekazujemy 3 argumenty
-        }
+            var position = new Vector(0.0, 0.0);
+            var velocity = new Vector(1.0, 1.0);
+            double mass = 2.0;
+            double diameter = 5.0;
 
+            var ball = new Ball(position, velocity, mass, diameter);
+
+            Assert.AreEqual(position.x, ball.Position.x);
+            Assert.AreEqual(velocity.y, ball.Velocity.y);
+            Assert.AreEqual(mass, ball.Mass);
+            Assert.AreEqual(diameter, ball.Diameter);
+        }
 
         [TestMethod]
-        public void MoveTestMethod()
+        public void Move_ChangesPositionAndFiresEvent()
         {
-            Vector initialPosition = new(10.0, 10.0);
-            double diameter = 5.0; // Dodajemy wartość dla średnicy
-            Ball newInstance = new(initialPosition, new Vector(0.0, 0.0), diameter); // Przekazujemy średnicę do konstruktora
-            IVector currentPosition = new Vector(0.0, 0.0);
-            int numberOfCallBackCalled = 0;
+            var position = new Vector(10.0, 10.0);
+            var velocity = new Vector(1.0, 0.0);
+            var ball = new Ball(position, velocity, 1.0, 5.0);
 
-            // Rejestracja callbacka, który będzie sprawdzał, czy pozycja została zaktualizowana
-            newInstance.NewPositionNotification += (sender, position) =>
+            int eventCount = 0;
+            ball.NewPositionNotification += (_, pos) =>
             {
-                Assert.IsNotNull(sender);
-                currentPosition = position;
-                numberOfCallBackCalled++;
+                Assert.AreEqual(11.0, pos.x, 0.001);
+                Assert.AreEqual(10.0, pos.y, 0.001);
+                eventCount++;
             };
 
-            // Wywołanie metody Move
-            newInstance.Move(new Vector(0.0, 0.0));
-
-            // Sprawdzenie, czy callback został wywołany
-            Assert.AreEqual<int>(1, numberOfCallBackCalled);
-
-            // Sprawdzenie, czy pozycja nie została zmieniona
-            Assert.AreEqual<IVector>(initialPosition, currentPosition);
+            ball.Move(1.0);
+            Assert.AreEqual(1, eventCount);
         }
-
     }
 }

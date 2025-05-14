@@ -59,6 +59,7 @@ namespace ConcurrentProgramming.Data
                 throw new ObjectDisposedException(nameof(DataImplementation));
         }
 
+
         public override void Dispose()
         {
             Dispose(disposing: true);
