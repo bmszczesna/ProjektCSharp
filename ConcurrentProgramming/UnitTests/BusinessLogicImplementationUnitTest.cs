@@ -57,13 +57,19 @@ namespace ConcurrentProgramming.Logic.Test
             bool isDisposed = false;
             logic.CheckObjectDisposed(d => isDisposed = d);
 
+            // Assert przed Dispose
+            Assert.IsFalse(isDisposed, "Logic powinien być niezużyty przed Dispose");
+
             // Act
             logic.Dispose();
 
-            // Assert
-            Assert.IsTrue(isDisposed);
-            Assert.IsTrue(fixture.Disposed);
+            logic.CheckObjectDisposed(d => isDisposed = d);
+
+            // Assert po Dispose
+            Assert.IsTrue(isDisposed, "Logic nie ustawił flagi Disposed");
+            Assert.IsTrue(fixture.Disposed, "Fixture nie ustawił flagi Disposed");
         }
+
 
         #region Fixtures
 
@@ -74,7 +80,8 @@ namespace ConcurrentProgramming.Logic.Test
             public int NumberOfBallsCreated = -1;
 
             // Poprawnie zaimplementowana metoda Start
-            public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
+            public override void Start(int numberOfBalls, Action<ConcurrentProgramming.Data.IVector, ConcurrentProgramming.Data.IBall>
+ upperLayerHandler)
             {
                 StartCalled = true;
                 NumberOfBallsCreated = numberOfBalls;
@@ -100,7 +107,8 @@ namespace ConcurrentProgramming.Logic.Test
             }
 
             // Fixture dla Piłki (IBall)
-            private class BallFixture : IBall
+            private class BallFixture : ConcurrentProgramming.Data.IBall
+
             {
                 public event EventHandler<IVector>? NewPositionNotification;
 
@@ -125,7 +133,7 @@ namespace ConcurrentProgramming.Logic.Test
             public bool Disposed = false;
 
             // Implementacja metody Start (nie jest używana w tym teście)
-            public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
+            public override void Start(int numberOfBalls, Action<ConcurrentProgramming.Data.IVector, ConcurrentProgramming.Data.IBall> upperLayerHandler)
             {
                 // Ta metoda nie jest potrzebna w tym teście
             }

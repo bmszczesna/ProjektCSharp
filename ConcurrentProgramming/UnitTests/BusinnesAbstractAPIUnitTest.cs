@@ -8,7 +8,8 @@
         [TestMethod]
         public void GetDimensionsTestMethod()
         {
-            Assert.AreEqual<Dimensions>(new(10.0, 10.0, 10.0), BusinessLogicAbstractAPI.GetDimensions);
+            Assert.AreEqual(new Dimensions(10.0, 420.0, 400.0), BusinessLogicAbstractAPI.GetDimensions);
         }
+
     }
 }
