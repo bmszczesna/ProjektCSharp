@@ -26,15 +26,18 @@ namespace ConcurrentProgramming.Data
                 throw new ArgumentNullException(nameof(upperLayerHandler));
 
             Random random = new Random();
-            double defaultDiameter = 20;
 
             lock (ballsLock)
             {
                 for (int i = 0; i < numberOfBalls; i++)
                 {
-                    Vector startingPosition = new Vector(random.Next(100, 400 - 100), random.Next(100, 400 - 100));
-                    Vector startingVelocity = new Vector((random.NextDouble() * 20 - 10), (random.NextDouble() * 20 - 10));
-                    Ball newBall = new Ball(startingPosition, startingVelocity, 1, defaultDiameter);
+                    double mass = random.NextDouble() * 4 + 1; 
+                    double diameter = 10 + mass * 5; 
+
+                    Vector startingPosition = new Vector(random.Next(100, 300), random.Next(100, 300));
+                    Vector startingVelocity = new Vector((random.NextDouble() * 50 - 10), (random.NextDouble() * 50 - 10));
+
+                    Ball newBall = new Ball(startingPosition, startingVelocity);
                     upperLayerHandler(startingPosition, newBall);
                     BallsList.Add(newBall);
                 }
@@ -81,7 +84,7 @@ namespace ConcurrentProgramming.Data
             List<Ball> ballsCopy;
             lock (ballsLock)
             {
-                ballsCopy = new List<Ball>(BallsList); // bezpieczna kopia
+                ballsCopy = new List<Ball>(BallsList);
             }
 
             foreach (Ball ball in ballsCopy)

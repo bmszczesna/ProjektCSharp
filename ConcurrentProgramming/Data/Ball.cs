@@ -5,12 +5,13 @@
         #region ctor
 
 
-        internal Ball(Vector initialPosition, Vector initialVelocity, double mass, double diameter)
+        internal Ball(Vector initialPosition, Vector initialVelocity)
         {
+            Random random = new Random();
             Position = initialPosition;
             Velocity = initialVelocity;
-            Mass = mass;
-            Diameter = diameter;
+            Mass = random.NextDouble() * 4 + 1;
+            Diameter = 10 + Mass * 5;
         }
 
         #endregion ctor

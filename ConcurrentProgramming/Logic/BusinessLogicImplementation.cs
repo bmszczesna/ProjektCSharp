@@ -56,7 +56,7 @@ namespace ConcurrentProgramming.Logic
 
                 var aPos = new Position(movingBall.DataBall.Position.x, movingBall.DataBall.Position.y);
                 var bPos = new Position(other.DataBall.Position.x, other.DataBall.Position.y);
-                var diameter = GetDimensions.BallDimension * 2;
+                var diameter = (other.DataBall.Diameter + movingBall.Diameter) / 2;
 
                 if (movingBall.AreBallsColliding(aPos, bPos, diameter))
                 {

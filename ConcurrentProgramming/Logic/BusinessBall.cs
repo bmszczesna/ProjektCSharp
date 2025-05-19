@@ -18,6 +18,8 @@
 
         public Data.IBall DataBall { get; }
 
+        public double Diameter => DataBall.Diameter;
+
         #endregion IBall
 
         #region private
@@ -36,31 +38,32 @@
 
         private void HandleEdgeCollision(Position position)
         {
-            // Kolizja z lewą i prawą krawędzią
-            if (position.x - tableDimensions.BallDimension < Margin)
+            double radius = DataBall.Diameter / 2.0;
+
+            // lewa/prawa
+            if (position.x - radius < Margin)
             {
-                position.x = tableDimensions.BallDimension + Margin;
-                DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y); // Odbicie w osi X
+                position.x = radius + Margin;
+                DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
             }
-            else if (position.x + tableDimensions.BallDimension > tableDimensions.TableWidth)
+            else if (position.x + radius > tableDimensions.TableWidth)
             {
-                position.x = tableDimensions.TableWidth - tableDimensions.BallDimension;
-                DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y); // Odbicie w osi X
+                position.x = tableDimensions.TableWidth - radius;
+                DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
             }
 
-            // Kolizja z górną i dolną krawędzią
-            if (position.y - tableDimensions.BallDimension < Margin)
+            // góra/dół
+            if (position.y - radius < Margin)
             {
-                position.y = tableDimensions.BallDimension + Margin;
-                DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y); // Odbicie w osi Y
+                position.y = radius + Margin;
+                DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
             }
-            else if (position.y + tableDimensions.BallDimension > tableDimensions.TableHeight)
+            else if (position.y + radius > tableDimensions.TableHeight)
             {
-                position.y = tableDimensions.TableHeight - tableDimensions.BallDimension;
-                DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y); // Odbicie w osi Y
+                position.y = tableDimensions.TableHeight - radius;
+                DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
             }
 
-            DataBall.Position = new Data.Vector(position.x, position.y);
         }
 
 
@@ -96,7 +99,6 @@
                 b.Velocity.y + impulse * a.Mass * normal.y
             );
         }
-
 
         #endregion private
     }

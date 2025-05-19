@@ -1,4 +1,6 @@
-﻿namespace ConcurrentProgramming.Logic
+﻿using ConcurrentProgramming.Data;
+
+namespace ConcurrentProgramming.Logic
 {
     public abstract class BusinessLogicAbstractAPI : IDisposable
     {
@@ -13,7 +15,7 @@
 
         #region Layer API
 
-        public static readonly Dimensions GetDimensions = new(10.0, 420.0, 400.0);
+        public static readonly Dimensions GetDimensions = new(420.0, 400.0);
 
         public abstract void Start(int numberOfBalls, Action<IPosition, IBall> upperLayerHandler);
 
@@ -34,13 +36,12 @@
     /// <summary>
     /// Immutable type representing table dimensions
     /// </summary>
-    /// <param name="BallDimension"></param>
     /// <param name="TableHeight"></param>
     /// <param name="TableWidth"></param>
     /// <remarks>
     /// Must be abstract
     /// </remarks>
-    public record Dimensions(double BallDimension, double TableHeight, double TableWidth);
+    public record Dimensions(double TableHeight, double TableWidth);
 
     public interface IPosition
     {
@@ -51,5 +52,7 @@
     public interface IBall
     {
         event EventHandler<IPosition> NewPositionNotification;
+        double Diameter { get; }
+
     }
 }

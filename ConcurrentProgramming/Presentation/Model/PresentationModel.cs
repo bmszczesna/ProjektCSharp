@@ -54,10 +54,9 @@ namespace Model
         private bool Disposed = false;
         private readonly IObservable<EventPattern<BallChaneEventArgs>> eventObservable = null;
         private readonly UnderneathLayerAPI layerBellow = null;
-
         private void StartHandler(ConcurrentProgramming.Logic.IPosition position, ConcurrentProgramming.Logic.IBall ball)
         {
-            ModelBall newBall = new ModelBall(position.x, position.y, ball) { Diameter = 20.0 };
+            ModelBall newBall = new ModelBall(position.x, position.y, ball) { Diameter = ball.Diameter};
             BallChanged.Invoke(this, new BallChaneEventArgs() { Ball = newBall });
         }
 
