@@ -48,25 +48,25 @@ namespace ConcurrentProgramming.Logic
 
         private void HandleCollisions(Ball movingBall)
         {
-            var ballsCopy = new List<Ball>(logicBalls);
-
-            foreach (var other in ballsCopy)
+            lock (collisionLock)
             {
-                if (other == movingBall) continue;
+                var ballsCopy = new List<Ball>(logicBalls);
 
-                var aPos = new Position(movingBall.DataBall.Position.x, movingBall.DataBall.Position.y);
-                var bPos = new Position(other.DataBall.Position.x, other.DataBall.Position.y);
-                var diameter = (other.DataBall.Diameter + movingBall.Diameter) / 2;
-
-                if (movingBall.AreBallsColliding(aPos, bPos, diameter))
+                foreach (var other in ballsCopy)
                 {
-                    movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
+                    if (other == movingBall) continue;
+
+                    var aPos = new Position(movingBall.DataBall.Position.x, movingBall.DataBall.Position.y);
+                    var bPos = new Position(other.DataBall.Position.x, other.DataBall.Position.y);
+                    var diameter = (other.DataBall.Diameter + movingBall.Diameter) / 2;
+
+                    if (movingBall.AreBallsColliding(aPos, bPos, diameter))
+                    {
+                        movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
+                    }
                 }
             }
         }
-
-
-
 
         #endregion BusinessLogicAbstractAPI
 
@@ -76,7 +76,9 @@ namespace ConcurrentProgramming.Logic
 
         private readonly UnderneathLayerAPI layerBellow;
 
-        private List<ConcurrentProgramming.Logic.Ball> logicBalls = new();
+        private List<Ball> logicBalls = new();
+
+        private readonly object collisionLock = new();
 
         #endregion private
 

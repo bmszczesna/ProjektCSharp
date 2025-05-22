@@ -20,8 +20,6 @@ namespace ConcurrentProgramming.Data
 
         public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
         {
-
-
             if (Disposed)
                 throw new ObjectDisposedException(nameof(DataImplementation));
             if (upperLayerHandler == null)
@@ -60,22 +58,16 @@ namespace ConcurrentProgramming.Data
                     BallsList.Clear();
                 }
             }
-
-            Disposed = true; 
+            else
+                throw new ObjectDisposedException(nameof(DataImplementation));
         }
-
 
 
         public override void Dispose()
         {
-            if (Disposed)
-                throw new ObjectDisposedException(nameof(DataImplementation));
-
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
-
-
 
         #endregion IDisposable
 
@@ -101,39 +93,9 @@ namespace ConcurrentProgramming.Data
             }
         }
 
-
-
         private DateTime LastMoveTime = DateTime.Now;
         private readonly object ballsLock = new object();
 
         #endregion private
-
-#if DEBUG
-        // Zwraca liczbę kul
-        internal void CheckNumberOfBalls(Action<int> callback)
-        {
-            lock (ballsLock)
-            {
-                callback(BallsList.Count);
-            }
-        }
-
-        // Zwraca listę kul
-        internal void CheckBallsList(Action<IEnumerable<IBall>> callback)
-        {
-            lock (ballsLock)
-            {
-                callback(BallsList.ToList());
-            }
-        }
-
-        // Zwraca stan flagi Disposed
-        internal void CheckObjectDisposed(Action<bool> callback)
-        {
-            callback(Disposed);
-        }
-#endif
-
     }
-
 }

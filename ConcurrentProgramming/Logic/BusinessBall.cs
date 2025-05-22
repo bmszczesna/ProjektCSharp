@@ -66,8 +66,6 @@
 
         }
 
-
-
         public bool AreBallsColliding(IPosition a, IPosition b, double diameter)
         {
             double dx = a.x - b.x;
