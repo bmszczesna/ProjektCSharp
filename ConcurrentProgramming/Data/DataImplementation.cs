@@ -6,7 +6,9 @@ namespace ConcurrentProgramming.Data
     internal class DataImplementation : DataAbstractAPI
     {
 
-        private readonly DiagnosticLogger Logger = new DiagnosticLogger("diagnostic_log.txt");
+        private readonly DiagnosticLogger Logger = new DiagnosticLogger(
+     Path.Combine("Logs", $"diagnostic_log_{DateTime.Now:yyyyMMdd_HHmmss}.txt"));
+
 
 
         #region ctor

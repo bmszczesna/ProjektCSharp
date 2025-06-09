@@ -13,15 +13,26 @@ namespace ConcurrentProgramming.Data
 
         public DiagnosticLogger(string filePath)
         {
+            string? directory = Path.GetDirectoryName(filePath);
+            if (!string.IsNullOrEmpty(directory))
+            {
+                Directory.CreateDirectory(directory); // UPEWNIA się, że folder istnieje
+            }
+
             loggingTask = Task.Run(() =>
             {
                 using StreamWriter writer = new(filePath, append: true);
-                foreach (string log in logQueue.GetConsumingEnumerable(cts.Token))
+                try
                 {
-                    writer.WriteLine(log);
+                    foreach (var message in logQueue.GetConsumingEnumerable(cts.Token))
+                    {
+                        writer.WriteLine(message);
+                    }
                 }
+                catch (OperationCanceledException) { }
             });
         }
+
 
         public void Log(string message)
         {
