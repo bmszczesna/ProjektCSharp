@@ -5,6 +5,10 @@ namespace ConcurrentProgramming.Data
 {
     internal class DataImplementation : DataAbstractAPI
     {
+
+        private readonly DiagnosticLogger Logger = new DiagnosticLogger("diagnostic_log.txt");
+
+
         #region ctor
 
         public DataImplementation()
@@ -53,6 +57,7 @@ namespace ConcurrentProgramming.Data
             if (disposing)
             {
                 MoveTimer.Dispose();
+                Logger.Dispose(); 
                 lock (ballsLock)
                 {
                     BallsList.Clear();
@@ -61,6 +66,7 @@ namespace ConcurrentProgramming.Data
             else
                 throw new ObjectDisposedException(nameof(DataImplementation));
         }
+
 
 
         public override void Dispose()
@@ -87,11 +93,17 @@ namespace ConcurrentProgramming.Data
                 ballsCopy = new List<Ball>(BallsList);
             }
 
+            int index = 0;
             foreach (Ball ball in ballsCopy)
             {
                 ball.Move(deltaTime);
+
+                Logger.Log($"Time: {DateTime.Now:O} | Ball #{index} Pos: ({ball.Position.x:F2}, {ball.Position.y:F2}) Vel: ({ball.Velocity.x:F2}, {ball.Velocity.y:F2})");
+
+                index++;
             }
         }
+
 
         private DateTime LastMoveTime = DateTime.Now;
         private readonly object ballsLock = new object();
