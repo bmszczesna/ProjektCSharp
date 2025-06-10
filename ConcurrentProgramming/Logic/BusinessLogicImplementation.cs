@@ -1,30 +1,17 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using UnderneathLayerAPI = ConcurrentProgramming.Data.DataAbstractAPI;
+using ConcurrentProgramming.Data;
 
 namespace ConcurrentProgramming.Logic
 {
     internal class BusinessLogicImplementation : BusinessLogicAbstractAPI
     {
-        #region ctor
-
-        public BusinessLogicImplementation() : this(null)
-        { }
+        public BusinessLogicImplementation() : this(null) { }
 
         internal BusinessLogicImplementation(UnderneathLayerAPI? underneathLayer)
         {
             layerBellow = underneathLayer == null ? UnderneathLayerAPI.GetDataLayer() : underneathLayer;
-        }
-
-        #endregion ctor
-
-        #region BusinessLogicAbstractAPI
-
-        public override void Dispose()
-        {
-            if (Disposed)
-                throw new ObjectDisposedException(nameof(BusinessLogicImplementation));
-            layerBellow.Dispose();
-            Disposed = true;
         }
 
         public override void Start(int numberOfBalls, Action<IPosition, IBall> upperLayerHandler)
@@ -45,6 +32,13 @@ namespace ConcurrentProgramming.Logic
             });
         }
 
+        public override void Dispose()
+        {
+            if (Disposed)
+                throw new ObjectDisposedException(nameof(BusinessLogicImplementation));
+            layerBellow.Dispose();
+            Disposed = true;
+        }
 
         private void HandleCollisions(Ball movingBall)
         {
@@ -62,34 +56,18 @@ namespace ConcurrentProgramming.Logic
 
                     if (movingBall.AreBallsColliding(aPos, bPos, diameter))
                     {
+                        DiagnosticLogger.Log($"Collision: Ball A at ({aPos.x:F2}, {aPos.y:F2}) vs Ball B at ({bPos.x:F2}, {bPos.y:F2})");
                         movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
                     }
                 }
             }
         }
 
-        #endregion BusinessLogicAbstractAPI
-
-        #region private
-
         private bool Disposed = false;
-
         private readonly UnderneathLayerAPI layerBellow;
-
-        private List<Ball> logicBalls = new();
-
+        private readonly List<Ball> logicBalls = new();
         private readonly object collisionLock = new();
 
-        #endregion private
-
-        #region TestingInfrastructure
-
-        internal void CheckObjectDisposed(Action<bool> returnInstanceDisposed)
-
-        {
-            returnInstanceDisposed(Disposed);
-        }
-
-        #endregion TestingInfrastructure
+        internal void CheckObjectDisposed(Action<bool> returnInstanceDisposed) => returnInstanceDisposed(Disposed);
     }
 }

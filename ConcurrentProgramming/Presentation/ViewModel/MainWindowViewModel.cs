@@ -98,9 +98,13 @@ namespace ViewModel
         {
             if (Disposed)
                 throw new ObjectDisposedException(nameof(MainWindowViewModel));
+
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+
+            ConcurrentProgramming.Data.DiagnosticLogger.Shutdown(); //wywołanie logera 
         }
+
 
         #endregion IDisposable
 

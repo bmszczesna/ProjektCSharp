@@ -1,4 +1,7 @@
-﻿namespace ConcurrentProgramming.Logic
+﻿using System;
+using ConcurrentProgramming.Data;
+
+namespace ConcurrentProgramming.Logic
 {
     internal class Ball : IBall
     {
@@ -35,35 +38,39 @@
             NewPositionNotification?.Invoke(this, newPosition);
         }
 
-
         private void HandleEdgeCollision(Position position)
         {
             double radius = DataBall.Diameter / 2.0;
 
-            // lewa/prawa
+            // lewa ściana
             if (position.x - radius < Margin)
             {
                 position.x = radius + Margin;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
+                DiagnosticLogger.Log($"Ball hit LEFT wall at ({position.x:F2}, {position.y:F2})");
             }
+            // prawa ściana
             else if (position.x + radius > tableDimensions.TableWidth)
             {
                 position.x = tableDimensions.TableWidth - radius;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
+                DiagnosticLogger.Log($"Ball hit RIGHT wall at ({position.x:F2}, {position.y:F2})");
             }
 
-            // góra/dół
+            // górna ściana
             if (position.y - radius < Margin)
             {
                 position.y = radius + Margin;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
+                DiagnosticLogger.Log($"Ball hit TOP wall at ({position.x:F2}, {position.y:F2})");
             }
+            // dolna ściana
             else if (position.y + radius > tableDimensions.TableHeight)
             {
                 position.y = tableDimensions.TableHeight - radius;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
+                DiagnosticLogger.Log($"Ball hit BOTTOM wall at ({position.x:F2}, {position.y:F2})");
             }
-
         }
 
         public bool AreBallsColliding(IPosition a, IPosition b, double diameter)
@@ -101,4 +108,3 @@
         #endregion private
     }
 }
-
