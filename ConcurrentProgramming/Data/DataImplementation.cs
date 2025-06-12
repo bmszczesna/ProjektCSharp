@@ -78,7 +78,7 @@ namespace ConcurrentProgramming.Data
             foreach (Ball ball in ballsCopy)
             {
                 ball.Move(deltaTime);
-                DiagnosticLogger.Log($"Ball #{index} Pos: ({ball.Position.x:F2}, {ball.Position.y:F2}) Vel: ({ball.Velocity.x:F2}, {ball.Velocity.y:F2})");
+                DiagnosticLogger.LogBallPosition(index, ball.Position.x, ball.Position.y, ball.Velocity.x, ball.Velocity.y);
                 index++;
             }
         }

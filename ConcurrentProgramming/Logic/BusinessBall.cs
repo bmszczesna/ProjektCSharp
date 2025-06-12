@@ -42,36 +42,33 @@ namespace ConcurrentProgramming.Logic
         {
             double radius = DataBall.Diameter / 2.0;
 
-            // lewa ściana
             if (position.x - radius < Margin)
             {
                 position.x = radius + Margin;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
-                DiagnosticLogger.Log($"Ball hit LEFT wall at ({position.x:F2}, {position.y:F2})");
+                DiagnosticLogger.LogWallCollision("LEFT", position.x, position.y);
             }
-            // prawa ściana
             else if (position.x + radius > tableDimensions.TableWidth)
             {
                 position.x = tableDimensions.TableWidth - radius;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
-                DiagnosticLogger.Log($"Ball hit RIGHT wall at ({position.x:F2}, {position.y:F2})");
+                DiagnosticLogger.LogWallCollision("RIGHT", position.x, position.y);
             }
 
-            // górna ściana
             if (position.y - radius < Margin)
             {
                 position.y = radius + Margin;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
-                DiagnosticLogger.Log($"Ball hit TOP wall at ({position.x:F2}, {position.y:F2})");
+                DiagnosticLogger.LogWallCollision("TOP", position.x, position.y);
             }
-            // dolna ściana
             else if (position.y + radius > tableDimensions.TableHeight)
             {
                 position.y = tableDimensions.TableHeight - radius;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
-                DiagnosticLogger.Log($"Ball hit BOTTOM wall at ({position.x:F2}, {position.y:F2})");
+                DiagnosticLogger.LogWallCollision("BOTTOM", position.x, position.y);
             }
         }
+
 
         public bool AreBallsColliding(IPosition a, IPosition b, double diameter)
         {
