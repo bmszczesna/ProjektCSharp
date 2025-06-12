@@ -56,9 +56,10 @@ namespace ConcurrentProgramming.Logic
 
                     if (movingBall.AreBallsColliding(aPos, bPos, diameter))
                     {
-                        DiagnosticLogger.Log($"Collision: Ball A at ({aPos.x:F2}, {aPos.y:F2}) vs Ball B at ({bPos.x:F2}, {bPos.y:F2})");
+                        DiagnosticLogger.LogBallCollision(aPos.x, aPos.y, bPos.x, bPos.y);
                         movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
                     }
+
                 }
             }
         }
