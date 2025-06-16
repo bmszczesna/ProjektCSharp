@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConcurrentProgramming.Data
 {
-    public class DiagnosticLogger
+    public static class DiagnosticLogger
     {
         private static readonly BlockingCollection<string> logQueue = new();
-        private static readonly CancellationTokenSource cts = new();
         private static readonly Task loggingTask;
         private static readonly string logFilePath;
-
         private static bool isDisposed = false;
 
         static DiagnosticLogger()
@@ -23,34 +20,55 @@ namespace ConcurrentProgramming.Data
 
             loggingTask = Task.Run(() =>
             {
-                using StreamWriter writer = new(logFilePath, append: true);
                 try
                 {
-                    foreach (var log in logQueue.GetConsumingEnumerable(cts.Token))
+                    using StreamWriter writer = new(logFilePath, append: true);
+                    foreach (var log in logQueue.GetConsumingEnumerable())
                     {
                         writer.WriteLine(log);
+                        writer.Flush(); // Wymuszamy zapis na dysk po każdym wpisie
                     }
                 }
-                catch (OperationCanceledException) { }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Logger exception: {ex}");
+                }
             });
         }
 
         public static void Log(string message)
         {
+            System.Diagnostics.Debug.WriteLine("LOG >> " + message);
             if (!logQueue.IsAddingCompleted)
             {
-                logQueue.Add($"[{DateTime.Now:O}] {message}");
+                try
+                {
+                    logQueue.Add($"[{DateTime.Now:O}] {message}");
+                }
+                catch (InvalidOperationException)
+                {
+                    // Kolejka została zamknięta - ignorujemy
+                }
             }
         }
 
         public static void Shutdown()
         {
             if (isDisposed) return;
-            isDisposed = true;
 
+            isDisposed = true;
             logQueue.CompleteAdding();
-            cts.Cancel();
-            try { loggingTask.Wait(); } catch { }
+            try
+            {
+                loggingTask.Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var inner in ex.InnerExceptions)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Logger shutdown exception: {inner}");
+                }
+            }
         }
 
         public static void LogWallCollision(string wall, IBall ball)
@@ -67,6 +85,5 @@ namespace ConcurrentProgramming.Data
         {
             Log($"Collision: Ball A at ({ballA.Position.x:F2}, {ballA.Position.y:F2}) vs Ball B at ({ballB.Position.x:F2}, {ballB.Position.y:F2})");
         }
-
     }
 }
