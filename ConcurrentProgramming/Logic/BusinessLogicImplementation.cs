@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnderneathLayerAPI = ConcurrentProgramming.Data.DataAbstractAPI;
+﻿using UnderneathLayerAPI = ConcurrentProgramming.Data.DataAbstractAPI;
 using ConcurrentProgramming.Data;
 
 namespace ConcurrentProgramming.Logic
@@ -56,7 +54,7 @@ namespace ConcurrentProgramming.Logic
 
                     if (movingBall.AreBallsColliding(aPos, bPos, diameter))
                     {
-                        DiagnosticLogger.LogBallCollision(aPos.x, aPos.y, bPos.x, bPos.y);
+                        DiagnosticLogger.LogBallCollision(movingBall.DataBall, other.DataBall);
                         movingBall.ResolveElasticCollision(movingBall.DataBall, other.DataBall);
                     }
 

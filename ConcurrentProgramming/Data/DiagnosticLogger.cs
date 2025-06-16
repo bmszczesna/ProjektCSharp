@@ -53,19 +53,19 @@ namespace ConcurrentProgramming.Data
             try { loggingTask.Wait(); } catch { }
         }
 
-        public static void LogWallCollision(string wall, double x, double y)
+        public static void LogWallCollision(string wall, IBall ball)
         {
-            Log($"Ball hit {wall} wall at ({x:F2}, {y:F2})");
+            Log($"Ball hit {wall} wall at ({ball.Position.x:F2}, {ball.Position.y:F2})");
         }
 
-        public static void LogBallPosition(int id, double x, double y, double vx, double vy)
+        public static void LogBallPosition(int id, IBall ball)
         {
-            Log($"Ball #{id} Pos: ({x:F2}, {y:F2}) Vel: ({vx:F2}, {vy:F2})");
+            Log($"Ball #{id} Pos: ({ball.Position.x:F2}, {ball.Position.y:F2}) Vel: ({ball.Velocity.x:F2}, {ball.Velocity.y:F2})");
         }
 
-        public static void LogBallCollision(double ax, double ay, double bx, double by)
+        public static void LogBallCollision(IBall ballA, IBall ballB)
         {
-            Log($"Collision: Ball A at ({ax:F2}, {ay:F2}) vs Ball B at ({bx:F2}, {by:F2})");
+            Log($"Collision: Ball A at ({ballA.Position.x:F2}, {ballA.Position.y:F2}) vs Ball B at ({ballB.Position.x:F2}, {ballB.Position.y:F2})");
         }
 
     }

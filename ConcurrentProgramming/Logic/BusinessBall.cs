@@ -46,26 +46,26 @@ namespace ConcurrentProgramming.Logic
             {
                 position.x = radius + Margin;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
-                DiagnosticLogger.LogWallCollision("LEFT", position.x, position.y);
+                DiagnosticLogger.LogWallCollision("LEFT", DataBall);
             }
             else if (position.x + radius > tableDimensions.TableWidth)
             {
                 position.x = tableDimensions.TableWidth - radius;
                 DataBall.Velocity = new Data.Vector(-DataBall.Velocity.x, DataBall.Velocity.y);
-                DiagnosticLogger.LogWallCollision("RIGHT", position.x, position.y);
+                DiagnosticLogger.LogWallCollision("RIGHT", DataBall);
             }
 
             if (position.y - radius < Margin)
             {
                 position.y = radius + Margin;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
-                DiagnosticLogger.LogWallCollision("TOP", position.x, position.y);
+                DiagnosticLogger.LogWallCollision("TOP", DataBall);
             }
             else if (position.y + radius > tableDimensions.TableHeight)
             {
                 position.y = tableDimensions.TableHeight - radius;
                 DataBall.Velocity = new Data.Vector(DataBall.Velocity.x, -DataBall.Velocity.y);
-                DiagnosticLogger.LogWallCollision("BOTTOM", position.x, position.y);
+                DiagnosticLogger.LogWallCollision("BOTTOM", DataBall);
             }
         }
 
